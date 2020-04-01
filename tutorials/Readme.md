@@ -1,2 +1,0 @@
-# scala-lang.org tutoral
-
