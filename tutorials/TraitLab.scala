@@ -44,6 +44,8 @@ class Dog(var name: String) extends Speaker with TailWagger with Running {
     override def stopRunning(): Unit = println("No need to stop")
 }
 
+class Cat(var name: String)
+
 object TraitLab {
     def main(args: Array[String]): Unit = {
         val d1 = new Date(2010, 5, 10)
@@ -54,5 +56,9 @@ object TraitLab {
         println(dog.speak)
         dog.startRunning
         dog.startTail
+
+        val fido = new Cat("Fido") with TailWagger with Running
+        fido.startRunning
+        fido.stopRunning
     }
 }
