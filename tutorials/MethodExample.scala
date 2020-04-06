@@ -2,6 +2,8 @@
 object Math {
     def add(x: Int, y: Int): Int = x+y
 
+    def double(x: Int) = x * 2
+
     def isEven(n: Int): Boolean = {
         n % 2 == 0
     }
