@@ -23,10 +23,36 @@ class Date(y: Int, m: Int, d: Int) extends Ord {
     }
 }
 
+trait Speaker {
+    def speak(): String
+}
+
+trait TailWagger {
+    def startTail(): Unit = println("tail is wagging")
+    def StopTail(): Unit = println("tail is stoping")
+}
+
+trait Running {
+    def startRunning(): Unit = println("I'm running")
+    def stopRunning(): Unit = println("Stopped running")
+}
+
+class Dog(var name: String) extends Speaker with TailWagger with Running {
+    def speak(): String = "Meow"
+
+    override def startRunning(): Unit = println("Yeah ... I don't run")
+    override def stopRunning(): Unit = println("No need to stop")
+}
+
 object TraitLab {
     def main(args: Array[String]): Unit = {
         val d1 = new Date(2010, 5, 10)
         val d2 = new Date(2010, 5, 11)
         println(d1 >= d2)
+
+        val dog = new Dog(name="Tiger")
+        println(dog.speak)
+        dog.startRunning
+        dog.startTail
     }
 }
