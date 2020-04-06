@@ -2,6 +2,15 @@
 object Math {
     def add(x: Int, y: Int): Int = x+y
 
+    def isEven(n: Int): Boolean = {
+        n % 2 == 0
+    }
+
+    def isTrue(a: Any): Boolean = a match {
+        case 0 | "" => false
+        case _ => true
+    }
+
     def convertBooleanToString(bool: Boolean): String = {
         if (bool) "true" else "false"
     }
@@ -20,5 +29,7 @@ object MethodLab {
         println("add(1, 2)=" + Math.add(1, 2))
         println("true=" + Math.convertBooleanToString(true))
         println("true message=" + Math.convertBooleanToStringMessage(true))
+
+        println("9 is even? " + Math.isEven(9))
     }
 }
