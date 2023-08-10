@@ -53,12 +53,12 @@ object TraitLab {
         println(d1 >= d2)
 
         val dog = new Dog(name="Tiger")
-        println(dog.speak)
-        dog.startRunning
-        dog.startTail
+        println(dog.speak())
+        dog.startRunning()
+        dog.startTail()
 
         val fido = new Cat("Fido") with TailWagger with Running
-        fido.startRunning
-        fido.stopRunning
+        fido.startRunning()
+        fido.stopRunning()
     }
 }
